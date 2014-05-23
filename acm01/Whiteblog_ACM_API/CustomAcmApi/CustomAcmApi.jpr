@@ -147,16 +147,7 @@
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
-      <list n="exportedReferences">
-         <hash>
-            <url n="id" path="../../../../../.jdeveloper/system11.1.1.7.40.64.93/o.jdeveloper/Local ACM libs.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="BPM Services"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-      </list>
+      <list n="exportedReferences"/>
       <list n="libraryReferences">
          <hash>
             <url n="id" path="../../../../../.jdeveloper/system11.1.1.7.40.64.93/o.jdeveloper/Local ACM libs.library"/>
