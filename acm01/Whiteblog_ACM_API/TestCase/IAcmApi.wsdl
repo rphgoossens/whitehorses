@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+     name="IAcmApi"
+     targetNamespace="http://acm.whitehorses.nl/"
+     xmlns:tns="http://acm.whitehorses.nl/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://acm.whitehorses.nl/" xmlns:tns="http://acm.whitehorses.nl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="init">
+                <xsd:sequence/>
+            </xsd:complexType>
+            <xsd:element name="init" type="tns:init"/>
+            <xsd:complexType name="initResponse">
+                <xsd:sequence/>
+            </xsd:complexType>
+            <xsd:element name="initResponse" type="tns:initResponse"/>
+            <xsd:complexType name="destroy">
+                <xsd:sequence/>
+            </xsd:complexType>
+            <xsd:element name="destroy" type="tns:destroy"/>
+            <xsd:complexType name="destroyResponse">
+                <xsd:sequence/>
+            </xsd:complexType>
+            <xsd:element name="destroyResponse" type="tns:destroyResponse"/>
+            <xsd:complexType name="raiseCaseEvent">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string"/>
+                    <xsd:element name="arg1" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="raiseCaseEvent" type="tns:raiseCaseEvent"/>
+            <xsd:complexType name="raiseCaseEventResponse">
+                <xsd:sequence/>
+            </xsd:complexType>
+            <xsd:element name="raiseCaseEventResponse" type="tns:raiseCaseEventResponse"/>
+            <xsd:complexType name="AcmApiException">
+                <xsd:sequence>
+                    <xsd:element name="Message" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="AcmApiException" type="tns:AcmApiException"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="initInput">
+        <wsdl:part name="parameters" element="tns:init"/>
+    </wsdl:message>
+    <wsdl:message name="initOutput">
+        <wsdl:part name="parameters" element="tns:initResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AcmApiException">
+        <wsdl:part name="AcmApiException" element="tns:AcmApiException"/>
+    </wsdl:message>
+    <wsdl:message name="destroyInput">
+        <wsdl:part name="parameters" element="tns:destroy"/>
+    </wsdl:message>
+    <wsdl:message name="destroyOutput">
+        <wsdl:part name="parameters" element="tns:destroyResponse"/>
+    </wsdl:message>
+    <wsdl:message name="raiseCaseEventInput">
+        <wsdl:part name="parameters" element="tns:raiseCaseEvent"/>
+    </wsdl:message>
+    <wsdl:message name="raiseCaseEventOutput">
+        <wsdl:part name="parameters" element="tns:raiseCaseEventResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="IAcmApi">
+        <wsdl:operation name="init">
+            <wsdl:input message="tns:initInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:initOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:fault name="AcmApiException" message="tns:AcmApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="destroy">
+            <wsdl:input message="tns:destroyInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:destroyOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:fault name="AcmApiException" message="tns:AcmApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="raiseCaseEvent">
+            <wsdl:input message="tns:raiseCaseEventInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:raiseCaseEventOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:fault name="AcmApiException" message="tns:AcmApiException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

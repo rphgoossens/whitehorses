@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="UT-SoaSuite-TestCase" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CaseServiceBinding" type="wsdl" bindingName="{http://xmlns.oracle.com/CaseService}CaseServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://soabpm-vm:7001//soa-infra/services/default/TestCase/TestCase.service?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://soabpm-vm:7001//soa-infra/services/default/TestCase/TestCase.service?WSDL"><con:part><con:url>http://soabpm-vm:7001//soa-infra/services/default/TestCase/TestCase.service?WSDL</con:url><con:content><![CDATA[<definitions name="CaseService" targetNamespace="http://xmlns.oracle.com/CaseService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:svc="http://xmlns.oracle.com/CaseService/types" xmlns:caseInstance="http://xmlns.oracle.com/CaseInstance" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.oracle.com/CaseService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:java="http://schemas.xmlsoap.org/wsdl/java/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:format="http://schemas.xmlsoap.org/wsdl/formatbinding/">
+  <documentation>
+    <abstractWSDL>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase!1.0/soa/shared/casemgmt/CaseService.wsdl</abstractWSDL>
+  </documentation>
+  <plnk:partnerLinkType name="CaseServicePartnerLink">
+    <plnk:role name="CaseServiceProvider">
+      <plnk:portType name="tns:CaseServicePortType"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <types>
+    <xsd:schema targetNamespace="http://xmlns.oracle.com/CaseService" xmlns="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://xmlns.oracle.com/CaseService/types" schemaLocation="http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=CaseService.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="startCaseInputMessage">
+    <part name="payload" element="svc:startCaseInputMessage"/>
+  </message>
+  <message name="startCaseOutputMessage">
+    <part name="payload" element="svc:startCaseOutputMessage"/>
+  </message>
+  <message name="caseServiceFaultMessage">
+    <part name="fault" element="svc:caseServiceFaultMessage"/>
+  </message>
+  <message name="attainMilestoneInputMessage">
+    <part name="payload" element="svc:attainMilestoneInputMessage"/>
+  </message>
+  <message name="attainMilestoneOutputMessage">
+    <part name="payload" element="svc:attainMilestoneOutputMessage"/>
+  </message>
+  <message name="revokeMilestoneInputMessage">
+    <part name="payload" element="svc:revokeMilestoneInputMessage"/>
+  </message>
+  <message name="revokeMilestoneOutputMessage">
+    <part name="payload" element="svc:revokeMilestoneOutputMessage"/>
+  </message>
+  <message name="abortCaseInputMessage">
+    <part name="payload" element="svc:abortCaseInputMessage"/>
+  </message>
+  <message name="abortCaseOutputMessage">
+    <part name="payload" element="svc:abortCaseOutputMessage"/>
+  </message>
+  <message name="suspendCaseInputMessage">
+    <part name="payload" element="svc:suspendCaseInputMessage"/>
+  </message>
+  <message name="suspendCaseOutputMessage">
+    <part name="payload" element="svc:suspendCaseOutputMessage"/>
+  </message>
+  <message name="resumeCaseInputMessage">
+    <part name="payload" element="svc:resumeCaseInputMessage"/>
+  </message>
+  <message name="resumeCaseOutputMessage">
+    <part name="payload" element="svc:resumeCaseOutputMessage"/>
+  </message>
+  <message name="closeCaseInputMessage">
+    <part name="payload" element="svc:closeCaseInputMessage"/>
+  </message>
+  <message name="closeCaseOutputMessage">
+    <part name="payload" element="svc:closeCaseOutputMessage"/>
+  </message>
+  <message name="reopenCaseInputMessage">
+    <part name="payload" element="svc:reopenCaseInputMessage"/>
+  </message>
+  <message name="reopenCaseOutputMessage">
+    <part name="payload" element="svc:reopenCaseOutputMessage"/>
+  </message>
+  <portType name="CaseServicePortType">
+    <operation name="startCase">
+      <input name="startCaseInput" message="tns:startCaseInputMessage"/>
+      <output name="startCaseOutput" message="tns:startCaseOutputMessage"/>
+      <fault name="startCaseFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="attainMilestone">
+      <input name="attainMilestoneInput" message="tns:attainMilestoneInputMessage"/>
+      <output name="attainMilestoneOutput" message="tns:attainMilestoneOutputMessage"/>
+      <fault name="attainMilestoneFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="revokeMilestone">
+      <input name="revokeMilestoneInput" message="tns:revokeMilestoneInputMessage"/>
+      <output name="revokeMilestoneOutput" message="tns:revokeMilestoneOutputMessage"/>
+      <fault name="revokeMilestoneFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="abortCase">
+      <input name="abortCaseInput" message="tns:abortCaseInputMessage"/>
+      <output name="abortCaseOutput" message="tns:abortCaseOutputMessage"/>
+      <fault name="abortCaseFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="suspendCase">
+      <input name="suspendCaseInput" message="tns:suspendCaseInputMessage"/>
+      <output name="suspendCaseOutput" message="tns:suspendCaseOutputMessage"/>
+      <fault name="suspendCaseFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="resumeCase">
+      <input name="resumeCaseInput" message="tns:resumeCaseInputMessage"/>
+      <output name="resumeCaseOutput" message="tns:resumeCaseOutputMessage"/>
+      <fault name="resumeCaseFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="closeCase">
+      <input name="closeCaseInput" message="tns:closeCaseInputMessage"/>
+      <output name="closeCaseOutput" message="tns:closeCaseOutputMessage"/>
+      <fault name="closeCaseFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+    <operation name="reopenCase">
+      <input name="reopenCaseInput" message="tns:reopenCaseInputMessage"/>
+      <output name="reopenCaseOutput" message="tns:reopenCaseOutputMessage"/>
+      <fault name="reopenCaseFault" message="tns:caseServiceFaultMessage"/>
+    </operation>
+  </portType>
+  <binding name="CaseServiceBinding" type="tns:CaseServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="startCase">
+      <soap:operation style="document" soapAction="startCase"/>
+      <input name="startCaseInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="startCaseOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="startCaseFault">
+        <soap:fault name="startCaseFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="attainMilestone">
+      <soap:operation style="document" soapAction="attainMilestone"/>
+      <input name="attainMilestoneInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="attainMilestoneOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="attainMilestoneFault">
+        <soap:fault name="attainMilestoneFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="revokeMilestone">
+      <soap:operation style="document" soapAction="revokeMilestone"/>
+      <input name="revokeMilestoneInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="revokeMilestoneOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="revokeMilestoneFault">
+        <soap:fault name="revokeMilestoneFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="abortCase">
+      <soap:operation style="document" soapAction="abortCase"/>
+      <input name="abortCaseInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="abortCaseOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="abortCaseFault">
+        <soap:fault name="abortCaseFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="suspendCase">
+      <soap:operation style="document" soapAction="suspendCase"/>
+      <input name="suspendCaseInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="suspendCaseOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="suspendCaseFault">
+        <soap:fault name="suspendCaseFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="resumeCase">
+      <soap:operation style="document" soapAction="resumeCase"/>
+      <input name="resumeCaseInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="resumeCaseOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="resumeCaseFault">
+        <soap:fault name="resumeCaseFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="closeCase">
+      <soap:operation style="document" soapAction="closeCase"/>
+      <input name="closeCaseInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="closeCaseOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="closeCaseFault">
+        <soap:fault name="closeCaseFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="reopenCase">
+      <soap:operation style="document" soapAction="reopenCase"/>
+      <input name="reopenCaseInput">
+        <soap:body use="literal"/>
+      </input>
+      <output name="reopenCaseOutput">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="reopenCaseFault">
+        <soap:fault name="reopenCaseFault" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="TestCase.service">
+    <port name="CaseServicePort" binding="tns:CaseServiceBinding">
+      <soap:address location="http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=CaseService.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://xmlns.oracle.com/CaseService/types" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/CaseService/types" xmlns:cm="http://xmlns.oracle.com/bpm/case">
+  <xsd:import schemaLocation="http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=Case.xsd" namespace="http://xmlns.oracle.com/bpm/case"/>
+  <xsd:element name="startCaseInputMessage" type="tStartCaseInputMessage"/>
+  <xsd:element name="startCaseOutputMessage" type="tStartCaseOutputMessage"/>
+  <xsd:element name="attainMilestoneInputMessage" type="tMilestoneInputMessage"/>
+  <xsd:element name="attainMilestoneOutputMessage" type="tMilestoneOutputMessage"/>
+  <xsd:element name="revokeMilestoneInputMessage" type="tMilestoneInputMessage"/>
+  <xsd:element name="revokeMilestoneOutputMessage" type="tMilestoneOutputMessage"/>
+  <xsd:element name="suspendCaseInputMessage" type="tSuspendResumeAbortCaseInputMessage"/>
+  <xsd:element name="suspendCaseOutputMessage" type="tSuspendResumeAbortCaseOutputMessage"/>
+  <xsd:element name="resumeCaseInputMessage" type="tSuspendResumeAbortCaseInputMessage"/>
+  <xsd:element name="resumeCaseOutputMessage" type="tSuspendResumeAbortCaseOutputMessage"/>
+  <xsd:element name="abortCaseInputMessage" type="tSuspendResumeAbortCaseInputMessage"/>
+  <xsd:element name="abortCaseOutputMessage" type="tSuspendResumeAbortCaseOutputMessage"/>
+  <xsd:element name="closeCaseInputMessage" type="tCloseCaseInputMessage"/>
+  <xsd:element name="closeCaseOutputMessage" type="tCloseCaseOutputMessage"/>
+  <xsd:element name="reopenCaseInputMessage" type="tSuspendResumeAbortCaseInputMessage"/>
+  <xsd:element name="reopenCaseOutputMessage" type="tSuspendResumeAbortCaseOutputMessage"/>
+  <xsd:element name="caseServiceFaultMessage" type="tCaseServiceFaultMessage"/>
+  <xsd:element name="bpmContext" type="tBpmContext"/>
+  <xsd:element name="caseIdentifier" type="tCaseIdentifier"/>
+  <xsd:complexType name="tBpmContext">
+    <xsd:sequence>
+      <xsd:element name="credential" type="tCredential" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="token" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="locale" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="timeZone" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCredential">
+    <xsd:sequence>
+      <xsd:element name="login" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="password" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="identityContext" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="onBehalfOfUser" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCaseIdentifier">
+    <xsd:sequence>
+      <xsd:element name="caseId" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="caseNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="identificationKey" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tStartCaseInputMessage">
+    <xsd:sequence>
+      <xsd:element ref="cm:case"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tStartCaseOutputMessage">
+    <xsd:sequence>
+      <xsd:element ref="caseIdentifier"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tMilestoneInputMessage">
+    <xsd:sequence>
+      <xsd:element ref="cm:milestone"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tMilestoneOutputMessage">
+    <xsd:sequence>
+      <xsd:element name="result" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCaseServiceFaultMessage">
+    <xsd:sequence>
+      <xsd:element name="message" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tSuspendResumeAbortCaseInputMessage">
+    <xsd:sequence>
+      <xsd:element ref="caseIdentifier"/>
+      <xsd:element ref="cm:comment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tSuspendResumeAbortCaseOutputMessage">
+    <xsd:sequence>
+      <xsd:element name="result" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCloseCaseInputMessage">
+    <xsd:sequence>
+      <xsd:element ref="caseIdentifier"/>
+      <xsd:element name="outcome" type="xsd:string"/>
+      <xsd:element ref="cm:comment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCloseCaseOutputMessage">
+    <xsd:sequence>
+      <xsd:element name="result" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=Case.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://xmlns.oracle.com/bpm/case" jaxb:version="2.0" jaxb:extensionBindingPrefixes="xjc" elementFormDefault="qualified" blockDefault="#all" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpm/case" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:extension="http://xmlns.oracle.com/bpm/case/metadata/extension" xmlns:common="http://xmlns.oracle.com/bpm/case/metadata/common">
+  <annotation>
+    <documentation>XML Schema for Case Instance</documentation>
+    <appinfo>
+      <jaxb:schemaBindings>
+        <jaxb:package name="oracle.bpm.casemgmt.metadata.caseinstance.model"/>
+      </jaxb:schemaBindings>
+    </appinfo>
+  </annotation>
+  <import namespace="http://xmlns.oracle.com/bpm/case/metadata/common" schemaLocation="http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=CaseMetadataCommon.xsd"/>
+  <import namespace="http://xmlns.oracle.com/bpm/case/metadata/extension" schemaLocation="http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=ExtensibleElements.xsd"/>
+  <element name="case" type="tns:tCase"/>
+  <element name="comment" type="tns:tComment"/>
+  <element name="milestone" type="tns:tMilestone"/>
+  <complexType name="tCase">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="caseId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseHeader" type="tns:tCaseHeader"/>
+          <element name="stakeHolders" type="tns:tStakeHolders" minOccurs="0" maxOccurs="1"/>
+          <element name="milestones" type="tns:tMilestones" minOccurs="0" maxOccurs="1"/>
+          <element name="data" type="tns:tData" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="comments" type="tns:tComments" minOccurs="0" maxOccurs="1"/>
+          <element name="caseFabricHeaderProperty" type="tns:tCaseFabricHeaderProperty" minOccurs="0" maxOccurs="1"/>
+          <element name="actions" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tCaseHeader">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="caseId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseNumber" type="integer" minOccurs="1" maxOccurs="1"/>
+          <element name="caseName" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="title" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="priority" type="tns:tPriority" minOccurs="1" maxOccurs="1"/>
+          <element name="createdBy" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="createdByDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="createdDate" type="dateTime" minOccurs="1" maxOccurs="1"/>
+          <element name="endDate" type="dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="expirationDate" type="dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="dueDate" type="dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <element name="state" type="tns:tStateEnum" minOccurs="1" maxOccurs="1"/>
+          <element name="stateDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="ecmFolder" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="caseDefinitionId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseDefinitionName" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseNamespace" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="identificationKey" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="category" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="categoryDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="outcome" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="outcomeDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="sca" type="tns:tSca" minOccurs="1" maxOccurs="1"/>
+          <element name="actions" type="string" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="caseSummaryFormURI" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="completedCaseActivityList" type="tns:tCompletedCaseActivityList" minOccurs="0" maxOccurs="1"/>
+          <element name="userPermissions" type="tns:tUserPermissions" minOccurs="0" maxOccurs="1"/>
+          <element name="userActions" type="tns:tUserActions" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tUserActions">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="actionsPermittedForCaseObject" type="tns:tActionsPermittedForCaseObject" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tActionsPermittedForCaseObject">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="caseObjectType" type="string" minOccurs="1" maxOccurs="1"/>
+          <sequence>
+            <element name="permittedAction" type="string" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tCompletedCaseActivityList">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="completedCaseActivity" type="tns:tCompletedCaseActivity" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tCompletedCaseActivity">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tUserPermissions">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="userId" type="string" minOccurs="0" maxOccurs="1"/>
+          <sequence>
+            <element name="caseObjectPermission" type="tns:tCaseObjectPermission" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tCaseObjectPermission">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="caseObject" type="string" minOccurs="0" maxOccurs="1"/>
+          <sequence>
+            <element name="actionUserCanPerform" type="tns:tActionUserCanPerform" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tActionUserCanPerform">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="action" type="string" minOccurs="0" maxOccurs="1"/>
+          <sequence>
+            <element name="permissionTag" type="tns:tPermissionTag" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tPermissionTag">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <sequence>
+            <element name="name" type="string" minOccurs="0" maxOccurs="1"/>
+            <element name="displayName" type="string" minOccurs="0" maxOccurs="1"/>
+          </sequence>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tIdentity">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="id" type="string" minOccurs="0"/>
+          <element name="displayName" type="string" minOccurs="0"/>
+          <element name="type" type="tns:tIdentityTypeEnum" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <simpleType name="tPriority">
+    <restriction base="integer">
+      <minInclusive value="1"/>
+      <maxInclusive value="5"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="tIdentityTypeEnum">
+    <restriction base="NMTOKEN">
+      <enumeration value="user"/>
+      <enumeration value="group"/>
+      <enumeration value="application_role"/>
+    </restriction>
+  </simpleType>
+  <complexType name="tCategory">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="displayName" type="string" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tStakeHolders">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="stakeHolder" type="tns:tStakeHolder" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tStakeHolder">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="id" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="displayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="dateAdded" type="dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+          <element name="addedBy" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="addedByDisplayName" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="isContextUserInRole" type="boolean" minOccurs="1" maxOccurs="1"/>
+          <element name="permissionMemberRole" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="applicationContext" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="stakeHolderMembers" type="tns:tStakeHolderMembers" minOccurs="0" maxOccurs="1"/>
+          <element name="comment" type="tns:tComment" minOccurs="0" maxOccurs="1"/>
+          <element name="actions" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tStakeHolderMembers">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="stakeHolderMember" type="tns:tStakeHolderMember" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tStakeHolderMember">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="id" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="stakeHolderId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="stakeHolder" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="stakeHolderDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="stakeHolderType" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="applicationContext" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="isContextUserInRole" type="boolean" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <simpleType name="tStateEnum">
+    <restriction base="NMTOKEN">
+      <enumeration value="ABORTED"/>
+      <enumeration value="ACTIVE"/>
+      <enumeration value="CLOSED"/>
+      <enumeration value="EXPIRED"/>
+      <enumeration value="SUSPENDED"/>
+    </restriction>
+  </simpleType>
+  <complexType name="tMilestones">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="milestone" type="tns:tMilestone" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tMilestone">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="id" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="displayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="state" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="dateAchieved" type="dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+          <element name="achievedBy" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="achievedByDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="comment" type="tns:tComment" minOccurs="0" maxOccurs="1"/>
+          <element name="actions" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tComments">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="comment" type="tns:tComment" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tComment">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="id" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="comment" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseObjectId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseObjectType" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="isSystemComment" type="boolean" minOccurs="1"/>
+          <element name="dateAdded" type="dateTime" nillable="true" minOccurs="1" maxOccurs="1"/>
+          <element name="addedBy" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="addedByDisplayName" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="actions" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tData">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="id" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="caseId" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="displayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="external" type="boolean" minOccurs="0" maxOccurs="1"/>
+          <element name="state" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="data" type="anyType" minOccurs="1" maxOccurs="1"/>
+          <element name="updatedDate" type="dateTime" minOccurs="1" maxOccurs="1" nillable="true"/>
+          <element name="updatedBy" type="string" minOccurs="1" maxOccurs="1"/>
+          <element name="updatedByDisplayName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="comment" type="tns:tComment" minOccurs="0" maxOccurs="1"/>
+          <element name="actions" type="string" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="caseDataFormUrl" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tSca">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="applicationName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="componentName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="compositeDN" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="compositeInstanceId" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="compositeName" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="compositeVersion" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="ecid" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="parentComponentInstanceId" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="parentComponentInstRefId" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="headerProperties" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="invokedComponent" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="compositeCreatedTime" type="dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="tCaseFabricHeaderProperty">
+    <complexContent>
+      <extension base="extension:tExtensibleElements">
+        <sequence>
+          <element name="compositeCreatedTime" type="dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=CaseMetadataCommon.xsd</con:url><con:content><![CDATA[<xsd:schema jaxb:version="2.0" jaxb:extensionBindingPrefixes="xjc" targetNamespace="http://xmlns.oracle.com/bpm/case/metadata/common" elementFormDefault="qualified" blockDefault="#all" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns="http://xmlns.oracle.com/bpm/case/metadata/common">
+  <xsd:annotation>
+    <xsd:documentation>XML Schema for Case Management Common Types and
+			Elements</xsd:documentation>
+    <xsd:appinfo>
+      <jaxb:schemaBindings>
+        <jaxb:package name="oracle.bpm.casemgmt.metadata.common.model"/>
+      </jaxb:schemaBindings>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType name="tTranslatableValue">
+    <xsd:sequence>
+      <xsd:element name="translationValue" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="translationParam" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="translationType" type="tTranslatableValueTypeEnum" use="required"/>
+  </xsd:complexType>
+  <xsd:simpleType name="tTranslatableValueTypeEnum">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="RESOURCE"/>
+      <xsd:enumeration value="STATIC"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tResource">
+    <xsd:complexContent>
+      <xsd:extension base="tStaticOrXPath">
+        <xsd:attribute name="identityType" type="tResourceIdentityType" use="required"/>
+        <xsd:attribute name="application_context" type="xsd:string" use="optional"/>
+        <xsd:attribute name="systemAttribute" type="xsd:string" use="optional"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="tResourceIdentityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="user"/>
+      <xsd:enumeration value="group"/>
+      <xsd:enumeration value="application_role"/>
+      <xsd:enumeration value="process_role"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tStaticOrXPath">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="type" type="tStaticOrXpathType" use="optional"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="tStaticOrXpathType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="STATIC"/>
+      <xsd:enumeration value="XPATH"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tPermissionTagEnum">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PUBLIC"/>
+      <xsd:enumeration value="RESTRICTED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCaseObjectEnum">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="CASE"/>
+      <xsd:enumeration value="COMMENT"/>
+      <xsd:enumeration value="DOCUMENT"/>
+      <xsd:enumeration value="DATA"/>
+      <xsd:enumeration value="EVENT"/>
+      <xsd:enumeration value="ACTIVITY"/>
+      <xsd:enumeration value="MILESTONE"/>
+      <xsd:enumeration value="STAKEHOLDER"/>
+      <xsd:enumeration value="HEADER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tActionEnum">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="READ"/>
+      <xsd:enumeration value="UPDATE"/>
+      <xsd:enumeration value="INVOKE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service?XSD=ExtensibleElements.xsd</con:url><con:content><![CDATA[<xsd:schema jaxb:version="2.0" jaxb:extensionBindingPrefixes="xjc" targetNamespace="http://xmlns.oracle.com/bpm/case/metadata/extension" elementFormDefault="qualified" blockDefault="#all" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns="http://xmlns.oracle.com/bpm/case/metadata/extension">
+  <xsd:annotation>
+    <xsd:documentation>XML Schema for extensible elements</xsd:documentation>
+    <xsd:appinfo>
+      <jaxb:schemaBindings>
+        <jaxb:package name="oracle.bpm.casemgmt.metadata.extension.model"/>
+      </jaxb:schemaBindings>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType name="tExtensibleElements">
+    <xsd:sequence>
+      <xsd:element name="documentation" type="tDocumentation" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDocumentation" mixed="true">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="tExtensibleMixedContentElements" mixed="true">
+    <xsd:sequence>
+      <xsd:element name="documentation" type="tDocumentation" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tBoolean">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="yes"/>
+      <xsd:enumeration value="no"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint></con:endpoints><con:operation isOneWay="false" action="abortCase" name="abortCase" bindingOperationName="abortCase" type="Request-Response" outputName="abortCaseOutput" inputName="abortCaseInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="attainMilestone" name="attainMilestone" bindingOperationName="attainMilestone" type="Request-Response" outputName="attainMilestoneOutput" inputName="attainMilestoneInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="closeCase" name="closeCase" bindingOperationName="closeCase" type="Request-Response" outputName="closeCaseOutput" inputName="closeCaseInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="reopenCase" name="reopenCase" bindingOperationName="reopenCase" type="Request-Response" outputName="reopenCaseOutput" inputName="reopenCaseInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="resumeCase" name="resumeCase" bindingOperationName="resumeCase" type="Request-Response" outputName="resumeCaseOutput" inputName="resumeCaseInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="revokeMilestone" name="revokeMilestone" bindingOperationName="revokeMilestone" type="Request-Response" outputName="revokeMilestoneOutput" inputName="revokeMilestoneInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="startCase" name="startCase" bindingOperationName="startCase" type="Request-Response" outputName="startCaseOutput" inputName="startCaseInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="suspendCase" name="suspendCase" bindingOperationName="suspendCase" type="Request-Response" outputName="suspendCaseOutput" inputName="suspendCaseInput" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="IAcmApiBinding" type="wsdl" bindingName="{http://acm.whitehorses.nl/}IAcmApiBinding" soapVersion="1_1" anonymous="optional" definition="http://soabpm-vm:7001//soa-infra/services/default/TestCase/AcmApiService?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://soabpm-vm:7001//soa-infra/services/default/TestCase/AcmApiService?WSDL"><con:part><con:url>http://soabpm-vm:7001//soa-infra/services/default/TestCase/AcmApiService?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="IAcmApi" targetNamespace="http://acm.whitehorses.nl/" xmlns:tns="http://acm.whitehorses.nl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>
+    <abstractWSDL>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase!1.0/IAcmApi.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://acm.whitehorses.nl/">
+      <xsd:complexType name="init">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="init" type="tns:init"/>
+      <xsd:complexType name="initResponse">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="initResponse" type="tns:initResponse"/>
+      <xsd:complexType name="destroy">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="destroy" type="tns:destroy"/>
+      <xsd:complexType name="destroyResponse">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="destroyResponse" type="tns:destroyResponse"/>
+      <xsd:complexType name="raiseCaseEvent">
+        <xsd:sequence>
+          <xsd:element name="arg0" type="xsd:string"/>
+          <xsd:element name="arg1" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="raiseCaseEvent" type="tns:raiseCaseEvent"/>
+      <xsd:complexType name="raiseCaseEventResponse">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="raiseCaseEventResponse" type="tns:raiseCaseEventResponse"/>
+      <xsd:complexType name="AcmApiException">
+        <xsd:sequence>
+          <xsd:element name="Message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AcmApiException" type="tns:AcmApiException"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="initInput">
+    <wsdl:part name="parameters" element="tns:init"/>
+  </wsdl:message>
+  <wsdl:message name="initOutput">
+    <wsdl:part name="parameters" element="tns:initResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AcmApiException">
+    <wsdl:part name="AcmApiException" element="tns:AcmApiException"/>
+  </wsdl:message>
+  <wsdl:message name="destroyInput">
+    <wsdl:part name="parameters" element="tns:destroy"/>
+  </wsdl:message>
+  <wsdl:message name="destroyOutput">
+    <wsdl:part name="parameters" element="tns:destroyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="raiseCaseEventInput">
+    <wsdl:part name="parameters" element="tns:raiseCaseEvent"/>
+  </wsdl:message>
+  <wsdl:message name="raiseCaseEventOutput">
+    <wsdl:part name="parameters" element="tns:raiseCaseEventResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IAcmApi">
+    <wsdl:operation name="init">
+      <wsdl:input message="tns:initInput" ns1:Action="" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+      <wsdl:output message="tns:initOutput" ns1:Action="" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+      <wsdl:fault name="AcmApiException" message="tns:AcmApiException"/>
+    </wsdl:operation>
+    <wsdl:operation name="destroy">
+      <wsdl:input message="tns:destroyInput" ns1:Action="" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+      <wsdl:output message="tns:destroyOutput" ns1:Action="" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+      <wsdl:fault name="AcmApiException" message="tns:AcmApiException"/>
+    </wsdl:operation>
+    <wsdl:operation name="raiseCaseEvent">
+      <wsdl:input message="tns:raiseCaseEventInput" ns1:Action="" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+      <wsdl:output message="tns:raiseCaseEventOutput" ns1:Action="" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+      <wsdl:fault name="AcmApiException" message="tns:AcmApiException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IAcmApiBinding" type="tns:IAcmApi">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="init">
+      <soap:operation style="document" soapAction="init"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AcmApiException">
+        <soap:fault name="AcmApiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="destroy">
+      <soap:operation style="document" soapAction="destroy"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AcmApiException">
+        <soap:fault name="AcmApiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="raiseCaseEvent">
+      <soap:operation style="document" soapAction="raiseCaseEvent"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AcmApiException">
+        <soap:fault name="AcmApiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcmApiService">
+    <wsdl:port name="IAcmApi_pt" binding="tns:IAcmApiBinding">
+      <soap:address location="http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/AcmApiService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/AcmApiService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="destroy" name="destroy" bindingOperationName="destroy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="init" name="init" bindingOperationName="init" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="raiseCaseEvent" name="raiseCaseEvent" bindingOperationName="raiseCaseEvent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:testSuite name="CaseServiceBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="abortCase TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="abortCase"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>abortCase</con:operation><con:request name="abortCase"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:abortCaseInputMessage>
+         <typ:caseIdentifier>
+            <!--Optional:-->
+            <typ:caseId>?</typ:caseId>
+            <!--Optional:-->
+            <typ:caseNumber>?</typ:caseNumber>
+            <!--Optional:-->
+            <typ:identificationKey>?</typ:identificationKey>
+         </typ:caseIdentifier>
+         <case:comment>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:comment>?</case:comment>
+            <case:caseObjectId>?</case:caseObjectId>
+            <case:caseObjectType>?</case:caseObjectType>
+            <case:isSystemComment>?</case:isSystemComment>
+            <case:dateAdded>?</case:dateAdded>
+            <case:addedBy>?</case:addedBy>
+            <case:addedByDisplayName>?</case:addedByDisplayName>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:comment>
+      </typ:abortCaseInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="abortCase"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="attainMilestone TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="attainMilestone"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>attainMilestone</con:operation><con:request name="attainMilestone"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:attainMilestoneInputMessage>
+         <case:milestone>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:name>?</case:name>
+            <!--Optional:-->
+            <case:displayName>?</case:displayName>
+            <case:state>?</case:state>
+            <case:dateAchieved>?</case:dateAchieved>
+            <!--Optional:-->
+            <case:achievedBy>?</case:achievedBy>
+            <!--Optional:-->
+            <case:achievedByDisplayName>?</case:achievedByDisplayName>
+            <!--Optional:-->
+            <case:comment>
+               <!--Zero or more repetitions:-->
+               <ext:documentation>cum sonoras</ext:documentation>
+               <case:id>?</case:id>
+               <case:caseId>?</case:caseId>
+               <case:comment>?</case:comment>
+               <case:caseObjectId>?</case:caseObjectId>
+               <case:caseObjectType>?</case:caseObjectType>
+               <case:isSystemComment>?</case:isSystemComment>
+               <case:dateAdded>?</case:dateAdded>
+               <case:addedBy>?</case:addedBy>
+               <case:addedByDisplayName>?</case:addedByDisplayName>
+               <!--Zero or more repetitions:-->
+               <case:actions>?</case:actions>
+            </case:comment>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:milestone>
+      </typ:attainMilestoneInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="attainMilestone"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="closeCase TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="closeCase"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>closeCase</con:operation><con:request name="closeCase"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:closeCaseInputMessage>
+         <typ:caseIdentifier>
+            <!--Optional:-->
+            <typ:caseId>?</typ:caseId>
+            <!--Optional:-->
+            <typ:caseNumber>?</typ:caseNumber>
+            <!--Optional:-->
+            <typ:identificationKey>?</typ:identificationKey>
+         </typ:caseIdentifier>
+         <typ:outcome>?</typ:outcome>
+         <case:comment>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:comment>?</case:comment>
+            <case:caseObjectId>?</case:caseObjectId>
+            <case:caseObjectType>?</case:caseObjectType>
+            <case:isSystemComment>?</case:isSystemComment>
+            <case:dateAdded>?</case:dateAdded>
+            <case:addedBy>?</case:addedBy>
+            <case:addedByDisplayName>?</case:addedByDisplayName>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:comment>
+      </typ:closeCaseInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="closeCase"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="reopenCase TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="reopenCase"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>reopenCase</con:operation><con:request name="reopenCase"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:reopenCaseInputMessage>
+         <typ:caseIdentifier>
+            <!--Optional:-->
+            <typ:caseId>?</typ:caseId>
+            <!--Optional:-->
+            <typ:caseNumber>?</typ:caseNumber>
+            <!--Optional:-->
+            <typ:identificationKey>?</typ:identificationKey>
+         </typ:caseIdentifier>
+         <case:comment>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:comment>?</case:comment>
+            <case:caseObjectId>?</case:caseObjectId>
+            <case:caseObjectType>?</case:caseObjectType>
+            <case:isSystemComment>?</case:isSystemComment>
+            <case:dateAdded>?</case:dateAdded>
+            <case:addedBy>?</case:addedBy>
+            <case:addedByDisplayName>?</case:addedByDisplayName>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:comment>
+      </typ:reopenCaseInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="reopenCase"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="resumeCase TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="resumeCase"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>resumeCase</con:operation><con:request name="resumeCase"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:resumeCaseInputMessage>
+         <typ:caseIdentifier>
+            <!--Optional:-->
+            <typ:caseId>?</typ:caseId>
+            <!--Optional:-->
+            <typ:caseNumber>?</typ:caseNumber>
+            <!--Optional:-->
+            <typ:identificationKey>?</typ:identificationKey>
+         </typ:caseIdentifier>
+         <case:comment>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:comment>?</case:comment>
+            <case:caseObjectId>?</case:caseObjectId>
+            <case:caseObjectType>?</case:caseObjectType>
+            <case:isSystemComment>?</case:isSystemComment>
+            <case:dateAdded>?</case:dateAdded>
+            <case:addedBy>?</case:addedBy>
+            <case:addedByDisplayName>?</case:addedByDisplayName>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:comment>
+      </typ:resumeCaseInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="resumeCase"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="revokeMilestone TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="revokeMilestone"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>revokeMilestone</con:operation><con:request name="revokeMilestone"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:revokeMilestoneInputMessage>
+         <case:milestone>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:name>?</case:name>
+            <!--Optional:-->
+            <case:displayName>?</case:displayName>
+            <case:state>?</case:state>
+            <case:dateAchieved>?</case:dateAchieved>
+            <!--Optional:-->
+            <case:achievedBy>?</case:achievedBy>
+            <!--Optional:-->
+            <case:achievedByDisplayName>?</case:achievedByDisplayName>
+            <!--Optional:-->
+            <case:comment>
+               <!--Zero or more repetitions:-->
+               <ext:documentation>cum sonoras</ext:documentation>
+               <case:id>?</case:id>
+               <case:caseId>?</case:caseId>
+               <case:comment>?</case:comment>
+               <case:caseObjectId>?</case:caseObjectId>
+               <case:caseObjectType>?</case:caseObjectType>
+               <case:isSystemComment>?</case:isSystemComment>
+               <case:dateAdded>?</case:dateAdded>
+               <case:addedBy>?</case:addedBy>
+               <case:addedByDisplayName>?</case:addedByDisplayName>
+               <!--Zero or more repetitions:-->
+               <case:actions>?</case:actions>
+            </case:comment>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:milestone>
+      </typ:revokeMilestoneInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="revokeMilestone"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="startCase TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="startCase"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>startCase</con:operation><con:request name="startCase"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns1:startCaseInputMessage xmlns:ns1="http://xmlns.oracle.com/CaseService/types" xmlns:ns2="http://xmlns.oracle.com/bpm/case">
+         <ns2:case>
+            <ns2:caseHeader>
+               <ns2:createdBy>weblogic</ns2:createdBy>
+               <ns2:ecmFolder/>
+            </ns2:caseHeader>
+            <ns2:stakeHolders>
+               <ns2:StakeHolder>
+                  <ns2:name>CustomStakeHolder</ns2:name>
+                  <ns2:stakeHolderMembers>
+                     <ns2:stakeHolderMember>
+                        <ns2:stakeHolder>goosser2</ns2:stakeHolder>
+                        <ns2:stakeHolderType>USER</ns2:stakeHolderType>
+                     </ns2:stakeHolderMember>
+                  </ns2:stakeHolderMembers>
+               </ns2:StakeHolder>
+            </ns2:stakeHolders>
+         </ns2:case>
+      </ns1:startCaseInputMessage>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="startCase" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="suspendCase TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="suspendCase"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CaseServiceBinding</con:interface><con:operation>suspendCase</con:operation><con:request name="suspendCase"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/TestCase.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/CaseService/types" xmlns:case="http://xmlns.oracle.com/bpm/case" xmlns:ext="http://xmlns.oracle.com/bpm/case/metadata/extension">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:suspendCaseInputMessage>
+         <typ:caseIdentifier>
+            <!--Optional:-->
+            <typ:caseId>?</typ:caseId>
+            <!--Optional:-->
+            <typ:caseNumber>?</typ:caseNumber>
+            <!--Optional:-->
+            <typ:identificationKey>?</typ:identificationKey>
+         </typ:caseIdentifier>
+         <case:comment>
+            <!--Zero or more repetitions:-->
+            <ext:documentation>e gero</ext:documentation>
+            <case:id>?</case:id>
+            <case:caseId>?</case:caseId>
+            <case:comment>?</case:comment>
+            <case:caseObjectId>?</case:caseObjectId>
+            <case:caseObjectType>?</case:caseObjectType>
+            <case:isSystemComment>?</case:isSystemComment>
+            <case:dateAdded>?</case:dateAdded>
+            <case:addedBy>?</case:addedBy>
+            <case:addedByDisplayName>?</case:addedByDisplayName>
+            <!--Zero or more repetitions:-->
+            <case:actions>?</case:actions>
+         </case:comment>
+      </typ:suspendCaseInputMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="suspendCase"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="IAcmApiBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="destroy TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="destroy"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>IAcmApiBinding</con:interface><con:operation>destroy</con:operation><con:request name="destroy"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/AcmApiService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acm="http://acm.whitehorses.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <acm:destroy/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="destroy"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="init TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="init"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>IAcmApiBinding</con:interface><con:operation>init</con:operation><con:request name="init"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/AcmApiService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acm="http://acm.whitehorses.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <acm:init/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="init"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="raiseCaseEvent TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="raiseCaseEvent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>IAcmApiBinding</con:interface><con:operation>raiseCaseEvent</con:operation><con:request name="raiseCaseEvent"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://soabpm-vm.site:7001/soa-infra/services/default/TestCase/AcmApiService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acm="http://acm.whitehorses.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <acm:raiseCaseEvent>
+         <arg0>e3187688-cb4c-4f80-9abb-859054e65ef9</arg0>
+         <arg1>testUserEvent</arg1>
+      </acm:raiseCaseEvent>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="raiseCaseEvent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,0 +1,5 @@
+.designer/*
+SCA-INF/classes/*
+SCA-INF/gen-classes/*
+SCA-INF/src/*
+!SCA-INF/lib/*

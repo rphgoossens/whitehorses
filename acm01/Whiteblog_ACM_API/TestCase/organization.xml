@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.97" fileRevision="20090820"?>
+<ns1:organization xmlns:ns2="http://xmlns.oracle.com/bpm/lpg/peopleQuery" xmlns:ns1="http://xmlns.oracle.com/bpm/organization" xmlns:ns4="http://xmlns.oracle.com/bpel/workflow/taskQuery" xmlns:ns3="http://xmlns.oracle.com/bpm/identity" xmlns:ns5="http://xmlns.oracle.com/bpel/workflow/task">
+    <ns1:updateExistingObjects>false</ns1:updateExistingObjects>
+    <ns1:organizationalUnits/>
+    <ns1:applicationRoles>
+        <ns1:applicationRole id="TestCase.ProcessOwner" isProcessRole="false">
+            <ns3:name>TestCase.ProcessOwner</ns3:name>
+            <ns1:processRole id="ProcessOwner" name="Process Owner"/>
+        </ns1:applicationRole>
+        <ns1:applicationRole id="TestCase.CustomStakeholder" isProcessRole="false">
+            <ns3:name>TestCase.CustomStakeholder</ns3:name>
+            <ns1:member type="USER">
+                <ns1:name>weblogic</ns1:name>
+            </ns1:member>
+            <ns1:processRole id="CustomStakeholder" name="CustomStakeholder"/>
+        </ns1:applicationRole>
+    </ns1:applicationRoles>
+    <ns1:applicationRoleOrgUnitCalendarAssociations/>
+    <ns1:participantPropertiesList/>
+    <ns1:holidayRules/>
+    <ns1:calendarRules/>
+</ns1:organization>

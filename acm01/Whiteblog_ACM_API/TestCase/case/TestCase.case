@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:caseMetadata targetNamespace="http://xmlns.oracle.com/TestCase" xmlns:ns2="http://xmlns.oracle.com/bpm/case/metadata" xmlns="http://xmlns.oracle.com/bpm/case/metadata/extension" xmlns:ns3="http://xmlns.oracle.com/bpm/case/metadata/common">
+    <ns2:name>TestCase</ns2:name>
+    <ns2:priority>3</ns2:priority>
+    <ns2:ecmFolder>
+        <ns2:parentFolder type="STATIC"></ns2:parentFolder>
+        <ns2:caseInstanceFolder type="STATIC"></ns2:caseInstanceFolder>
+        <ns2:createSubFolderOnCaseInstanceCreation>true</ns2:createSubFolderOnCaseInstanceCreation>
+    </ns2:ecmFolder>
+    <ns2:caseData/>
+    <ns2:events>
+        <ns2:userDefinedEvent>testUserEvent</ns2:userDefinedEvent>
+    </ns2:events>
+    <ns2:stakeHolders>
+        <ns2:stakeHolder>
+            <ns2:name>CustomStakeholder</ns2:name>
+            <ns2:resource identityType="user" type="STATIC">weblogic</ns2:resource>
+        </ns2:stakeHolder>
+    </ns2:stakeHolders>
+    <ns2:milestones>
+        <ns2:milestone>
+            <ns2:name>testUserEventFired</ns2:name>
+            <ns2:isSoft>false</ns2:isSoft>
+        </ns2:milestone>
+        <ns2:milestone>
+            <ns2:name>caseStarted</ns2:name>
+            <ns2:isSoft>false</ns2:isSoft>
+        </ns2:milestone>
+    </ns2:milestones>
+    <ns2:permissionTags>
+        <ns2:permissionTag>
+            <ns2:customTagName>PUBLIC</ns2:customTagName>
+        </ns2:permissionTag>
+        <ns2:permissionTag>
+            <ns2:customTagName>RESTRICTED</ns2:customTagName>
+        </ns2:permissionTag>
+    </ns2:permissionTags>
+    <ns2:resourceBundle>
+        <ns2:name>TestCaseResourceBundle</ns2:name>
+    </ns2:resourceBundle>
+</ns2:caseMetadata>

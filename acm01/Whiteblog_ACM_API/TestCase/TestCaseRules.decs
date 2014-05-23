@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<decisionServices xmlns="http://xmlns.oracle.com/bpel/rules" name="TestCaseRules">
+    <ruleEngineProvider name="myRuleEngine" provider="Oracle_11.0.0.0.0">
+        <repository type="SCA-Archive">
+            <path>TestCase/oracle/rules/TestCaseRules.rules</path>
+        </repository>
+    </ruleEngineProvider>
+    <decisionService targetNamespace="http://xmlns.oracle.com/bpm/case/caseDecision/TestCaseRules_TestCaseRules" ruleEngineProviderReference="myRuleEngine" name="TestCaseRules_TestCaseRules">
+        <catalog>TestCaseRules</catalog>
+        <pattern name="CallFunctionStateless">
+            <arguments>
+                <call>TestCaseRules.TestCaseRules</call>
+            </arguments>
+        </pattern>
+        <pattern name="CallFunctionStateful">
+            <arguments>
+                <call>TestCaseRules.TestCaseRules</call>
+            </arguments>
+        </pattern>
+    </decisionService>
+</decisionServices>
