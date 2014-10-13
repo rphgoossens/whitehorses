@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<RuleDictionary id="G}51f465e7:149049439c9:-7c32" xmlns="http://xmlns.oracle.com/rules/dictionary">
+  <Name>CaseWithCustomActivitiesRules</Name>
+  <Alias>CaseWithCustomActivitiesRules</Alias>
+  <Version>12.1.1.0.0</Version>
+  <DataModel id="L}1">
+    <CreationUpdateNumber>2</CreationUpdateNumber>
+    <QualifierPattern>{member} of {fact}</QualifierPattern>
+    <JavaFactType id="J}java.lang.Boolean">
+      <Name>java.lang.Boolean</Name>
+      <Alias>Boolean</Alias>
+      <Visible>true</Visible>
+      <CreationUpdateNumber>2</CreationUpdateNumber>
+      <Field id="J}public static final java.lang.Boolean java.lang.Boolean.TRUE">
+        <Name>TRUE</Name>
+        <Alias>TRUE</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <IDofType>J}java.lang.Boolean</IDofType>
+        <ListContentID>B}nil</ListContentID>
+        <Type>Boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+        <Final>true</Final>
+        <Static>true</Static>
+        <Modifiers id="L}38">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>true</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Enum>false</Enum>
+      </Field>
+      <Field id="J}public static final java.lang.Boolean java.lang.Boolean.FALSE">
+        <Name>FALSE</Name>
+        <Alias>FALSE</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <IDofType>J}java.lang.Boolean</IDofType>
+        <ListContentID>B}nil</ListContentID>
+        <Type>Boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+        <Final>true</Final>
+        <Static>true</Static>
+        <Modifiers id="L}40">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>true</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Enum>false</Enum>
+      </Field>
+      <Field id="J}public static final java.lang.Class java.lang.Boolean.TYPE">
+        <Name>TYPE</Name>
+        <Alias>TYPE</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <IDofType>J}java.lang.Class</IDofType>
+        <ListContentID>B}nil</ListContentID>
+        <Type>java.lang.Class</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+        <Final>true</Final>
+        <Static>true</Static>
+        <Modifiers id="L}42">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>true</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Enum>false</Enum>
+      </Field>
+      <Method id="J}public boolean java.lang.Boolean.equals(java.lang.Object)">
+        <Name>equals</Name>
+        <Alias>equals</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c2b">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}java.lang.Object</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}16">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>false</Static>
+        <IDofType>J}boolean</IDofType>
+        <Type>boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public static java.lang.String java.lang.Boolean.toString(boolean)">
+        <Name>toString</Name>
+        <Alias>toString_1</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c2a">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}boolean</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}18">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>true</Static>
+        <IDofType>J}java.lang.String</IDofType>
+        <Type>String</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public java.lang.String java.lang.Boolean.toString()">
+        <Name>toString</Name>
+        <Alias>toString</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <Modifiers id="L}20">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>false</Static>
+        <IDofType>J}java.lang.String</IDofType>
+        <Type>String</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public int java.lang.Boolean.hashCode()">
+        <Name>hashCode</Name>
+        <Alias>hashCode</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <Modifiers id="L}22">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>false</Static>
+        <IDofType>J}int</IDofType>
+        <Type>int</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public int java.lang.Boolean.compareTo(java.lang.Boolean)">
+        <Name>compareTo</Name>
+        <Alias>compareTo</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c29">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}java.lang.Boolean</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}24">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>false</Static>
+        <IDofType>J}int</IDofType>
+        <Type>int</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public static boolean java.lang.Boolean.getBoolean(java.lang.String)">
+        <Name>getBoolean</Name>
+        <Alias>getBoolean</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c28">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}java.lang.String</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}26">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>true</Static>
+        <IDofType>J}boolean</IDofType>
+        <Type>boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public boolean java.lang.Boolean.booleanValue()">
+        <Name>booleanValue</Name>
+        <Alias>booleanValue</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <Modifiers id="L}28">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>false</Static>
+        <IDofType>J}boolean</IDofType>
+        <Type>boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public static java.lang.Boolean java.lang.Boolean.valueOf(java.lang.String)">
+        <Name>valueOf</Name>
+        <Alias>valueOf</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c27">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}java.lang.String J}boolean</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}30">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>true</Static>
+        <IDofType>J}java.lang.Boolean</IDofType>
+        <Type>Boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public static int java.lang.Boolean.compare(boolean,boolean)">
+        <Name>compare</Name>
+        <Alias>compare</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c25">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}boolean</IDsOfType>
+        </OverloadedParameter>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c24">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}boolean</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}34">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>true</Static>
+        <IDofType>J}int</IDofType>
+        <Type>int</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Method id="J}public static boolean java.lang.Boolean.parseBoolean(java.lang.String)">
+        <Name>parseBoolean</Name>
+        <Alias>parseBoolean</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c23">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}java.lang.String</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}36">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>true</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+        <Static>true</Static>
+        <IDofType>J}boolean</IDofType>
+        <Type>boolean</Type>
+        <IDofBucketSet>B}nil</IDofBucketSet>
+      </Method>
+      <Constructor id="J}public java.lang.Boolean(boolean)">
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <Visible>true</Visible>
+        <OverloadedParameter id="G}51f465e7:149049439c9:-7c2f">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <IDsOfType>J}boolean J}java.lang.String</IDsOfType>
+        </OverloadedParameter>
+        <Modifiers id="L}12">
+          <CreationUpdateNumber>2</CreationUpdateNumber>
+          <Access>1</Access>
+          <isStatic>false</isStatic>
+          <isFinal>false</isFinal>
+          <isAbstract>false</isAbstract>
+        </Modifiers>
+      </Constructor>
+      <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+      <ValidationUpdateNumber>2</ValidationUpdateNumber>
+      <Source>file:/usr/lib/jvm/jdk.1.7.0_51/jre/lib/rt.jar</Source>
+      <IsArray>false</IsArray>
+      <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+      <SupportXPath>false</SupportXPath>
+      <IsInterface>false</IsInterface>
+      <Modifiers id="L}10">
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <Access>1</Access>
+        <isStatic>false</isStatic>
+        <isFinal>true</isFinal>
+        <isAbstract>false</isAbstract>
+      </Modifiers>
+      <IDsOfInterfaces>J}java.io.Serializable J}java.lang.Comparable</IDsOfInterfaces>
+      <EnumBucketSetID>B}nil</EnumBucketSetID>
+      <Timestamp>0</Timestamp>
+      <ENUM>false</ENUM>
+    </JavaFactType>
+    <SupportsXPathEnabled>false</SupportsXPathEnabled>
+    <DecisionFunction id="G}51f465e7:149049439c9:-7c22">
+      <Name>CaseWithCustomActivitiesRules</Name>
+      <Alias>CaseWithCustomActivitiesRules</Alias>
+      <Visible>true</Visible>
+      <CreationUpdateNumber>3</CreationUpdateNumber>
+      <WebService>true</WebService>
+      <CheckRuleFlow>false</CheckRuleFlow>
+      <Stateless>true</Stateless>
+      <DecisionFunctionInput id="G}51f465e7:149049439c9:-7c21">
+        <Name>Case</Name>
+        <Alias>Case</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>3</CreationUpdateNumber>
+        <IDofType>J}oracle.bpm.casemgmt.metadata.caseinstance.model.TCase</IDofType>
+        <List>false</List>
+        <Tree>true</Tree>
+      </DecisionFunctionInput>
+      <DecisionFunctionInput id="G}51f465e7:149049439c9:-7c20">
+        <Name>CaseEvent</Name>
+        <Alias>CaseEvent</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>3</CreationUpdateNumber>
+        <IDofType>J}oracle.bpm.casemgmt.metadata.event.model.TCaseEvent</IDofType>
+        <List>false</List>
+        <Tree>true</Tree>
+      </DecisionFunctionInput>
+      <DecisionFunctionInput id="G}51f465e7:149049439c9:-7c1f">
+        <Name>TCaseAction</Name>
+        <Alias>TCaseAction</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>3</CreationUpdateNumber>
+        <IDofType>J}oracle.bpm.casemgmt.caserule.model.TCaseAction</IDofType>
+        <List>false</List>
+        <Tree>true</Tree>
+      </DecisionFunctionInput>
+      <DecisionFunctionRuleSet id="L}45">
+        <CreationUpdateNumber>3</CreationUpdateNumber>
+        <Form>rule set</Form>
+        <Ruleset>CaseWithCustomActivitiesRules</Ruleset>
+        <refID>G}51f465e7:149049439c9:-7c30</refID>
+      </DecisionFunctionRuleSet>
+      <DecisionFunctionOutput id="G}51f465e7:149049439c9:-7c1e">
+        <Name>TCaseAction</Name>
+        <Alias>TCaseAction</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>3</CreationUpdateNumber>
+        <IDofType>J}oracle.bpm.casemgmt.caserule.model.TCaseAction</IDofType>
+        <List>false</List>
+        <Tree>true</Tree>
+      </DecisionFunctionOutput>
+      <ValidationUpdateNumber>3</ValidationUpdateNumber>
+      <RuleFiringLimit>10000</RuleFiringLimit>
+      <RuleFiringLimitError>true</RuleFiringLimitError>
+      <UniqueRulesets>false</UniqueRulesets>
+    </DecisionFunction>
+    <UpdateNumber>3</UpdateNumber>
+    <ValidationUpdateNumber>3</ValidationUpdateNumber>
+    <UpdateTime>0</UpdateTime>
+  </DataModel>
+  <RuleSet id="G}51f465e7:149049439c9:-7c30">
+    <Name>CaseWithCustomActivitiesRules</Name>
+    <Alias>CaseWithCustomActivitiesRules</Alias>
+    <ValidationUpdateNumber>2</ValidationUpdateNumber>
+    <Active>true</Active>
+    <CalendarForm>DateTime</CalendarForm>
+    <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
+    <CreationUpdateNumber>2</CreationUpdateNumber>
+  </RuleSet>
+  <DictionaryLink id="L}7">
+    <Name>DecisionPointDictionary</Name>
+    <Alias>DecisionPointDictionary</Alias>
+    <Package>oracle.rules.sdk2.decisionpoint.impl</Package>
+    <UpdateNumber>323</UpdateNumber>
+    <PrefixLinkedNames>true</PrefixLinkedNames>
+  </DictionaryLink>
+  <DictionaryLink id="L}8">
+    <Name>CaseManagementBaseDictionary</Name>
+    <Alias>CaseManagementBaseDictionary</Alias>
+    <Package>oracle.bpm.casemgmt.caserule</Package>
+    <UpdateNumber>7</UpdateNumber>
+    <PrefixLinkedNames>false</PrefixLinkedNames>
+  </DictionaryLink>
+  <ValidationUpdateNumber>3</ValidationUpdateNumber>
+  <UpdateNumber>3</UpdateNumber>
+  <TestModel id="L}3">
+    <ValidationUpdateNumber>1</ValidationUpdateNumber>
+    <UpdateNumber>1</UpdateNumber>
+    <Validation>true</Validation>
+    <AutoSync>true</AutoSync>
+  </TestModel>
+  <Preferences id="G}51f465e7:149049439c9:-7c31">
+    <RulesExecutionAlgorithm>RETE</RulesExecutionAlgorithm>
+    <DisallowErrorSuppression>false</DisallowErrorSuppression>
+    <PhraseSuggestions>All</PhraseSuggestions>
+    <RestrictAutoSuggestions>true</RestrictAutoSuggestions>
+    <IncludeChainedExpressions>true</IncludeChainedExpressions>
+  </Preferences>
+</RuleDictionary>

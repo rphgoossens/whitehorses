@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:caseMetadata targetNamespace="http://nl.whitehorses.acm/CaseWithCustomActivities" xmlns:ns2="http://xmlns.oracle.com/bpm/case/metadata" xmlns="http://xmlns.oracle.com/bpm/case/metadata/extension" xmlns:ns4="http://xmlns.oracle.com/bpm/case/activity" xmlns:ns3="http://xmlns.oracle.com/bpm/case/metadata/common">
+    <ns2:id>${domain_id}_${process_id}_${process_revision}_CaseWithCustomActivities</ns2:id>
+    <ns2:name>CaseWithCustomActivities</ns2:name>
+    <ns2:priority>3</ns2:priority>
+    <ns2:ecmFolder>
+        <ns2:parentFolder type="STATIC"></ns2:parentFolder>
+        <ns2:caseInstanceFolder type="STATIC"></ns2:caseInstanceFolder>
+        <ns2:createSubFolderOnCaseInstanceCreation>true</ns2:createSubFolderOnCaseInstanceCreation>
+    </ns2:ecmFolder>
+    <ns2:caseData/>
+    <ns2:permissionTags>
+        <ns2:permissionTag>
+            <ns2:customTagName>PUBLIC</ns2:customTagName>
+        </ns2:permissionTag>
+        <ns2:permissionTag>
+            <ns2:customTagName>RESTRICTED</ns2:customTagName>
+        </ns2:permissionTag>
+    </ns2:permissionTags>
+    <ns2:resourceBundle>
+        <ns2:name>CaseWithCustomActivitiesResourceBundle</ns2:name>
+    </ns2:resourceBundle>
+    <ns2:namespacePrefixes>
+        <ns2:namespacePrefix>
+            <ns2:prefix>bpm</ns2:prefix>
+            <ns2:namespace>http://xmlns.oracle.com/bpmn20/extensions</ns2:namespace>
+        </ns2:namespacePrefix>
+    </ns2:namespacePrefixes>
+    <ns2:organizationalUnitName type="STATIC"></ns2:organizationalUnitName>
+    <ns2:dueDate>
+        <ns2:duration type="STATIC"></ns2:duration>
+    </ns2:dueDate>
+    <ns2:useBusinessCalendar>false</ns2:useBusinessCalendar>
+</ns2:caseMetadata>

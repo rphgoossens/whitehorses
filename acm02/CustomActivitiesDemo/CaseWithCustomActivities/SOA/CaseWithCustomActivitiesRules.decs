@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decisionServices xmlns="http://xmlns.oracle.com/bpel/rules" name="CaseWithCustomActivitiesRules">
+   <ruleEngineProvider provider="Oracle_11.0.0.0.0" name="myRuleEngine">
+      <repository type="SCA-Archive">
+         <path>projectInfo/oracle/rules/CaseWithCustomActivitiesRules.rules</path>
+      </repository>
+   </ruleEngineProvider>
+   <decisionService name="CaseWithCustomActivitiesRules_CaseWithCustomActivitiesRules" ruleEngineProviderReference="myRuleEngine" targetNamespace="http://xmlns.oracle.com/bpm/case/caseDecision/CaseWithCustomActivitiesRules_CaseWithCustomActivitiesRules">
+      <catalog>CaseWithCustomActivitiesRules</catalog>
+      <pattern name="CallFunctionStateless">
+         <arguments>
+            <call>CaseWithCustomActivitiesRules.CaseWithCustomActivitiesRules</call>
+         </arguments>
+      </pattern>
+      <pattern name="CallFunctionStateful">
+         <arguments>
+            <call>CaseWithCustomActivitiesRules.CaseWithCustomActivitiesRules</call>
+         </arguments>
+      </pattern>
+   </decisionService>
+</decisionServices>
