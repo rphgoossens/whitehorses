@@ -4,6 +4,7 @@
 
 # soa project
 **/.data/**
+**/.designer/**
 **/target/**
 
 # Mobile Tools for Java (J2ME)

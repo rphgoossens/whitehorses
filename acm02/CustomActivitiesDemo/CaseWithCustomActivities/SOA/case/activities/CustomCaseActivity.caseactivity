@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:caseActivity targetNamespace="http://nl.whitehorses.acm/CaseWithCustomActivities/CustomCaseActivity" xmlns:ns2="http://xmlns.oracle.com/bpm/case/activity" xmlns="http://xmlns.oracle.com/bpm/case/metadata/extension" xmlns:ns4="http://xmlns.oracle.com/bpm/case/metadata" xmlns:ns3="http://xmlns.oracle.com/bpm/case/metadata/common">
+    <ns2:name>CustomCaseActivity</ns2:name>
+    <ns2:activityType>CUSTOM</ns2:activityType>
+    <ns2:repeatable>false</ns2:repeatable>
+    <ns2:required>false</ns2:required>
+    <ns2:manual>true</ns2:manual>
+    <ns2:isGlobal>false</ns2:isGlobal>
+    <ns2:isConditional>true</ns2:isConditional>
+    <ns2:customActivity>
+        <ns2:definition>
+            <ns2:className>nl.whitehorses.acm.CustomCaseActivity</ns2:className>
+        </ns2:definition>
+    </ns2:customActivity>
+</ns2:caseActivity>

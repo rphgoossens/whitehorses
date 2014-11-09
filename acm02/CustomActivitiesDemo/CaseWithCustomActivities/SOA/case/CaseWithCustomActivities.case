@@ -9,6 +9,12 @@
         <ns2:createSubFolderOnCaseInstanceCreation>true</ns2:createSubFolderOnCaseInstanceCreation>
     </ns2:ecmFolder>
     <ns2:caseData/>
+    <ns2:stakeHolders>
+        <ns2:stakeHolder>
+            <ns2:name>Stakeholder</ns2:name>
+            <ns2:resource identityType="user" type="STATIC">weblogic</ns2:resource>
+        </ns2:stakeHolder>
+    </ns2:stakeHolders>
     <ns2:permissionTags>
         <ns2:permissionTag>
             <ns2:customTagName>PUBLIC</ns2:customTagName>

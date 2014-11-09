@@ -363,16 +363,141 @@
       <RuleFiringLimitError>true</RuleFiringLimitError>
       <UniqueRulesets>false</UniqueRulesets>
     </DecisionFunction>
-    <UpdateNumber>3</UpdateNumber>
-    <ValidationUpdateNumber>3</ValidationUpdateNumber>
+    <UpdateNumber>28</UpdateNumber>
+    <ValidationUpdateNumber>28</ValidationUpdateNumber>
     <UpdateTime>0</UpdateTime>
   </DataModel>
   <RuleSet id="G}51f465e7:149049439c9:-7c30">
     <Name>CaseWithCustomActivitiesRules</Name>
     <Alias>CaseWithCustomActivitiesRules</Alias>
-    <ValidationUpdateNumber>2</ValidationUpdateNumber>
+    <ValidationUpdateNumber>28</ValidationUpdateNumber>
     <Active>true</Active>
     <CalendarForm>DateTime</CalendarForm>
+    <RuleSheet id="G}-4fa49a81:149900206d9:-7c2a">
+      <Name>DecisionTable1</Name>
+      <Alias>Decision Table 1</Alias>
+      <ValidationUpdateNumber>28</ValidationUpdateNumber>
+      <Priority>medium</Priority>
+      <Active>true</Active>
+      <CalendarForm>DateTime</CalendarForm>
+      <TreeMode>false</TreeMode>
+      <Visible>true</Visible>
+      <SimpleTest id="L}58">
+        <FactType>CaseEvent</FactType>
+        <IDofFactType>J}oracle.bpm.casemgmt.metadata.event.model.TCaseEvent</IDofFactType>
+        <FactPath>CaseEvent</FactPath>
+        <FactPathIDs>L}58</FactPathIDs>
+        <Form>FormIsA</Form>
+        <IDofOperator>B}==</IDofOperator>
+        <Connective>&amp;&amp;</Connective>
+        <Visible>false</Visible>
+        <DSLId>B}nil</DSLId>
+      </SimpleTest>
+      <ShowPatterns>false</ShowPatterns>
+      <Logical>false</Logical>
+      <Dimension id="L}52">
+        <IDofSharedBucketSet>G}10fcf3ea:144766625c7:-7b18</IDofSharedBucketSet>
+        <DimensionNode id="L}54">
+          <BucketIDTable>G}10fcf3ea:144766625c7:-7b15</BucketIDTable>
+          <Values>LIFECYCLE_EVENT</Values>
+          <ParentDimensionNode>B}nil</ParentDimensionNode>
+          <ChildDimensionNodes>L}67</ChildDimensionNodes>
+        </DimensionNode>
+        <PrivateBucketSet id="G}-4fa49a81:149900206d9:-7c29">
+          <Visible>true</Visible>
+          <CreationUpdateNumber>6</CreationUpdateNumber>
+          <IDofType>B}nil</IDofType>
+          <ListContentID>B}nil</ListContentID>
+          <Form>Default</Form>
+          <CalendarForm>Date</CalendarForm>
+          <Excluded>false</Excluded>
+          <ValidationUpdateNumber>-1</ValidationUpdateNumber>
+        </PrivateBucketSet>
+        <SharedBucketSet>TEventType</SharedBucketSet>
+        <Expression id="L}53">
+          <Value>CaseEvent.eventType</Value>
+          <ResolvedValue>`L}58`.`J}oracle.bpm.casemgmt.metadata.event.model.TCaseEvent.{eventType}`</ResolvedValue>
+          <IsConstant>false</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Dimension>
+      <Dimension id="L}65">
+        <IDofSharedBucketSet>G}10fcf3ea:144766625c7:-7b2d</IDofSharedBucketSet>
+        <DimensionNode id="L}67">
+          <BucketIDTable>G}10fcf3ea:144766625c7:-7b2b</BucketIDTable>
+          <Values>STARTED</Values>
+          <ParentDimensionNode>L}54</ParentDimensionNode>
+          <ChildDimensionNodes></ChildDimensionNodes>
+        </DimensionNode>
+        <PrivateBucketSet id="G}-4fa49a81:149900206d9:-7c28">
+          <Visible>true</Visible>
+          <CreationUpdateNumber>9</CreationUpdateNumber>
+          <IDofType>J}oracle.bpm.casemgmt.metadata.caseinstance.model.TCase</IDofType>
+          <ListContentID>B}nil</ListContentID>
+          <Type>Case</Type>
+          <Form>Default</Form>
+          <Bucket id="G}-4fa49a81:149900206d9:-7c27">
+            <Name>otherwise</Name>
+            <Alias>otherwise</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>9</CreationUpdateNumber>
+            <Inclusive>true</Inclusive>
+            <Otherwise>true</Otherwise>
+            <Excluded>false</Excluded>
+            <Expression id="L}70">
+              <IsConstant>true</IsConstant>
+              <ParameterID>B}nil</ParameterID>
+            </Expression>
+          </Bucket>
+          <CalendarForm>Date</CalendarForm>
+          <Excluded>false</Excluded>
+          <ValidationUpdateNumber>-1</ValidationUpdateNumber>
+        </PrivateBucketSet>
+        <SharedBucketSet>TLifecycleEvent</SharedBucketSet>
+        <Expression id="L}66">
+          <Value>CaseEvent.lifecycleEvent.lifecycleEvent</Value>
+          <ResolvedValue>`L}58`.`J}oracle.bpm.casemgmt.metadata.event.model.TCaseEvent.{lifecycleEvent}`.`J}oracle.bpm.casemgmt.metadata.event.model.TCaseLifecycleEvent.{lifecycleEvent}`</ResolvedValue>
+          <IsConstant>false</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Dimension>
+      <DTAction id="L}79">
+        <Form>Call</Form>
+        <Target>activateActivity</Target>
+        <ResolvedTarget>`G}10fcf3ea:144766625c7:-7a94`</ResolvedTarget>
+        <Expression id="L}83">
+          <IsConstant>true</IsConstant>
+          <ParameterAlias>activityName</ParameterAlias>
+          <ParameterID>G}10fcf3ea:144766625c7:-7a93</ParameterID>
+          <DTActionParameterName>activityName</DTActionParameterName>
+        </Expression>
+        <DSLId>B}nil</DSLId>
+        <AlwaysSelected>true</AlwaysSelected>
+        <DTActionNode id="L}80">
+          <Selected>false</Selected>
+          <Expression id="L}88">
+            <Value>&quot;CustomCaseActivity&quot;</Value>
+            <ResolvedValue>&quot;CustomCaseActivity&quot;</ResolvedValue>
+            <IsConstant>false</IsConstant>
+            <ParameterAlias>activityName</ParameterAlias>
+            <ParameterID>G}10fcf3ea:144766625c7:-7a93</ParameterID>
+            <DTActionParameterName>activityName</DTActionParameterName>
+          </Expression>
+        </DTActionNode>
+      </DTAction>
+      <DTRule id="L}55">
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
+        <CreationUpdateNumber>6</CreationUpdateNumber>
+      </DTRule>
+      <AllowGaps>true</AllowGaps>
+      <ConflictPolicy>manual</ConflictPolicy>
+      <OrderRulesByBucket>false</OrderRulesByBucket>
+      <VerticalOrientation>true</VerticalOrientation>
+    </RuleSheet>
     <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
     <CreationUpdateNumber>2</CreationUpdateNumber>
   </RuleSet>
@@ -390,8 +515,9 @@
     <UpdateNumber>7</UpdateNumber>
     <PrefixLinkedNames>false</PrefixLinkedNames>
   </DictionaryLink>
-  <ValidationUpdateNumber>3</ValidationUpdateNumber>
-  <UpdateNumber>3</UpdateNumber>
+  <ValidationUpdateNumber>28</ValidationUpdateNumber>
+  <UpdateNumber>28</UpdateNumber>
+  <ResourceBundle>CaseWithCustomActivitiesRulesTranslations</ResourceBundle>
   <TestModel id="L}3">
     <ValidationUpdateNumber>1</ValidationUpdateNumber>
     <UpdateNumber>1</UpdateNumber>
