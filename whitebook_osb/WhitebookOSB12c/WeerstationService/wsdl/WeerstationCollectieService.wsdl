@@ -1,31 +1,41 @@
-<wsdl:definitions name="WeerstationCollectieService" targetNamespace="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService">
- <wsdl:types>
-  <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService" schemaLocation="WeerstationCollectieService.xsd"/>
-  </xsd:schema>
- </wsdl:types>
- <wsdl:message name="WeerstationCollectieServiceVerzoekBericht">
-  <wsdl:part name="in" element="tns:WeerstationCollectieServiceVerzoek"/>
- </wsdl:message>
- <wsdl:message name="WeerstationCollectieServiceAntwoordBericht">
-  <wsdl:part name="uit" element="tns:WeerstationCollectieServiceAntwoord"/>
- </wsdl:message>
- <wsdl:portType name="HaalOpSteden">
-  <wsdl:operation name="haalOpSteden">
-   <wsdl:input message="tns:WeerstationCollectieServiceVerzoekBericht"/>
-   <wsdl:output message="tns:WeerstationCollectieServiceAntwoordBericht"/>
-  </wsdl:operation>
- </wsdl:portType>
- <wsdl:binding name="HaalOpStedenSoap12" type="tns:HaalOpSteden">
-  <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-  <wsdl:operation name="haalOpSteden">
-   <soap12:operation soapAction="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService/HaalOpSteden" style="document"/>
-   <wsdl:input>
-    <soap12:body use="literal" parts="in"/>
-   </wsdl:input>
-   <wsdl:output>
-    <soap12:body use="literal" parts="uit"/>
-   </wsdl:output>
-  </wsdl:operation>
- </wsdl:binding>
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="WeerstationCollectieService"
+     targetNamespace="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+     xmlns:tns="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService"
+                 schemaLocation="WeerstationCollectieService.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="WeerstationCollectieServiceVerzoekBericht">
+        <wsdl:part name="in" element="tns:WeerstationCollectieServiceVerzoek"/>
+    </wsdl:message>
+    <wsdl:message name="WeerstationCollectieServiceAntwoordBericht">
+        <wsdl:part name="uit" element="tns:WeerstationCollectieServiceAntwoord"/>
+    </wsdl:message>
+    <wsdl:portType name="HaalOpSteden">
+        <wsdl:operation name="haalOpSteden">
+            <wsdl:input message="tns:WeerstationCollectieServiceVerzoekBericht"/>
+            <wsdl:output message="tns:WeerstationCollectieServiceAntwoordBericht"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HaalOpStedenSoap12" type="tns:HaalOpSteden">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="haalOpSteden">
+            <soap12:operation style="document" soapAction="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService/HaalOpSteden"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="in"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="uit"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
 </wsdl:definitions>

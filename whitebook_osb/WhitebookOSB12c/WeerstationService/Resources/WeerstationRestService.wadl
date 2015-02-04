@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://whitehorses.nl/Whitebook_OSB12c/common" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="WeerstationRestService">RestService</doc>
+   <grammars>
+      <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://whitehorses.nl/Whitebook_OSB12c/WeerstationService">
+   <import namespace="http://whitehorses.nl/Whitebook_OSB12c/WeerstationService" schemaLocation="../wsdl/WeerstationService.xsd"/>
+  </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/haalOpSteden">
+         <method name="GET" soa:wsdlOperation="haalOpSteden">
+            <request>
+               <param name="Land" style="query" soa:expression="$msg.in/ns1:Land/ns1:Naam" default="" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:WeerstationServiceAntwoord" xmlns:cns="http://whitehorses.nl/Whitebook_OSB12c/WeerstationService"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

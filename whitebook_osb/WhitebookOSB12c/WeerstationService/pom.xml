@@ -49,5 +49,7 @@
                 </executions>
             </plugin>
         </plugins>
+        <sourceDirectory>.data/contentsets/</sourceDirectory>
+        <outputDirectory>.data/contentsets/.data/maven/classes/</outputDirectory>
     </build>
 </project>

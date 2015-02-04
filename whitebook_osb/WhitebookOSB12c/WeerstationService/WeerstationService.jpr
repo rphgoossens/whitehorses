@@ -159,8 +159,9 @@
          </list>
       </hash>
       <hash n="javaContentSet">
+         <list n="pattern-filters"/>
          <list n="url-path">
-            <url path="."/>
+            <url path=".data/contentsets/"/>
          </list>
       </hash>
    </hash>
@@ -186,7 +187,7 @@
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
-      <url n="outputDirectory" path=".data/maven/classes/"/>
+      <url n="outputDirectory" path=".data/contentsets/.data/maven/classes/"/>
    </hash>
    <hash n="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider">
       <hash n="mdsContentSet">
