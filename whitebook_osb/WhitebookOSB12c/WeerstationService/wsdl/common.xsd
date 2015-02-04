@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://whitehorses.nl/Whitebook_OSB12c/common"
+            targetNamespace="http://whitehorses.nl/Whitebook_OSB12c/common"
+            xmlns:tns="http://whitehorses.nl/Whitebook_OSB12c/common"
+            elementFormDefault="qualified">
+  <xsd:element name="Landen" type="tns:landenType"/>
+  <xsd:element name="Land" type="tns:landType"/>
+  <xsd:complexType name="landenType">
+    <xsd:sequence>
+      <xsd:element name="Land" type="tns:landType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="landType">
+    <xsd:sequence>
+      <xsd:element name="Naam" type="xsd:string"/>
+      <xsd:element name="Steden" type="tns:stedenType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="stedenType">
+    <xsd:sequence>
+      <xsd:element name="Stad" type="tns:stadType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="stadType">
+    <xsd:sequence>
+      <xsd:element name="Naam" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,17 @@
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://whitehorses.nl/Whitebook_OSB12c/WeerstationService" xmlns:tns="http://whitehorses.nl/Whitebook_OSB12c/WeerstationService" xmlns:common="http://whitehorses.nl/Whitebook_OSB12c/common" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://whitehorses.nl/Whitebook_OSB12c/common" schemaLocation="common.xsd"/>
+  <element name="WeerstationServiceVerzoek">
+    <complexType>
+      <sequence>
+        <element ref="common:Land"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="WeerstationServiceAntwoord">
+    <complexType>
+      <sequence>
+        <element ref="common:Land"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

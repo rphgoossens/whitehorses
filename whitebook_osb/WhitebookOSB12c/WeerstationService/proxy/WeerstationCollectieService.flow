@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process name="WeerstationCollectieService"
+              targetNamespace="http://xmlns.oracle.com/WhitebookOSB12c/WeerstationService/"
+              xmlns:tns="http://xmlns.oracle.com/WhitebookOSB12c/WeerstationService/"
+              xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+              xmlns:rescon="http://www.bea.com/alsb/flow/resources/config"
+              xmlns:bea="http://www.bea.com/bpel/ui/extensions"
+              xmlns:ext="http://www.bea.com/bpel/extensions"
+              xmlns:expr="http://www.bea.com/wli/sb/stages/config"
+              xmlns:trf="http://www.bea.com/wli/sb/stages/transform/config"
+              xmlns:bind="http://whitehorses.nl/Whitebook_OSB12c/WeerstationCollectieService" 
+              bea:name="WeerstationCollectieService"
+              rescon:snippetVersion="1.0"
+              xmlns:ns0="http://www.bea.com/wli/sb/pipeline/config"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:ns1="http://whitehorses.nl/Whitebook_OSB12c/common"
+              xmlns:ns2="http://whitehorses.nl/Whitebook_OSB12c/WeerstationService">
+    <rescon:importInfo>
+        <rescon:schema-import ref="WeerstationService/wsdl/common"/>
+    </rescon:importInfo>
+    <bpel:partnerLinks>
+        <bpel:partnerLink name="WeerstationCollectieService" partnerLinkType="tns:WeerstationCollectieService"
+                          myRole="WeerstationCollectieService">
+	       </bpel:partnerLink>
+        <bpel:partnerLink name="WeerstationService" partnerLinkType="tns:WeerstationService"
+                          partnerRole="WeerstationService"/>
+    </bpel:partnerLinks>
+
+	   <bpel:variables>
+        <bpel:variable name="request"
+	                      messageType="bind:WeerstationCollectieServiceVerzoekBericht">
+	       </bpel:variable>
+	       <bpel:variable name="response"
+                       messageType="bind:WeerstationCollectieServiceAntwoordBericht">
+	       </bpel:variable>
+        <bpel:variable name="landen" element="ns1:Landen"/>
+    </bpel:variables>
+
+    <bpel:sequence>
+        <bpel:receive partnerLink="WeerstationCollectieService" operation="haalOpSteden" variable="request" createInstance="yes">
+	           <rescon:receiveInfo>
+                <rescon:wsdl ref="WeerstationService/wsdl/WeerstationCollectieService" binding="bind:HaalOpStedenSoap12"/>
+            </rescon:receiveInfo>
+        </bpel:receive>
+        <bpel:assign>
+            <bpel:extensionAssignOperation>
+                <trf:assign varName="landen">
+                    <trf:expr>
+                        <expr:xqueryText>&lt;ns1:Landen/&gt;</expr:xqueryText>
+                    </trf:expr>
+                </trf:assign>
+            </bpel:extensionAssignOperation>
+        </bpel:assign>
+        <bpel:forEach parallel="yes" counterName="counter">
+            <bpel:startCounterValue>1</bpel:startCounterValue>
+            <bpel:finalCounterValue>count($request.in/ns1:Landen/ns1:Land)</bpel:finalCounterValue>
+            <bpel:scope>
+                <bpel:variables>
+                    <bpel:variable name="weerstationverzoek" messageType="ns2:WeerstationServiceVerzoekBericht"/>
+                    <bpel:variable name="weerstationantwoord" messageType="ns2:WeerstationServiceAntwoordBericht"/>
+                </bpel:variables>
+                <bpel:sequence>
+                    <bpel:assign>
+                        <bpel:extensionAssignOperation>
+                            <trf:assign varName="weerstationverzoek.in">
+                                <trf:expr>
+                                    <expr:xqueryText>&lt;ns2:WeerstationServiceVerzoek&gt;
+  &lt;ns1:Land&gt;
+    &lt;ns1:Naam&gt;{$request.in/ns1:Landen/ns1:Land[$counter]/ns1:Naam/text()}&lt;/ns1:Naam&gt;
+  &lt;/ns1:Land&gt;
+&lt;/ns2:WeerstationServiceVerzoek&gt;</expr:xqueryText>
+                                </trf:expr>
+                            </trf:assign>
+                        </bpel:extensionAssignOperation>
+                    </bpel:assign>
+                    <bpel:invoke partnerLink="WeerstationService" operation="haalOpSteden"
+                                 inputVariable="weerstationverzoek" outputVariable="weerstationantwoord">
+                        <rescon:invokeInfo>
+                            <rescon:service ref="WeerstationService/proxy/WeerstationService"
+                                            xsi:type="ns0:PipelineRef"/>
+                        </rescon:invokeInfo>
+                    </bpel:invoke>
+                    <bpel:assign>
+                        <bpel:extensionAssignOperation>
+                            <trf:insert varName="landen">
+                                <trf:location>
+                                    <expr:xpathText>.</expr:xpathText>
+                                </trf:location>
+                                <trf:where>first-child</trf:where>
+                                <trf:expr>
+                                    <expr:xqueryText>$weerstationantwoord.uit/ns1:Land</expr:xqueryText>
+                                </trf:expr>
+                            </trf:insert>
+                        </bpel:extensionAssignOperation>
+                    </bpel:assign>
+                </bpel:sequence>
+            </bpel:scope>
+        </bpel:forEach>
+        <bpel:assign>
+            <bpel:extensionAssignOperation>
+                <trf:assign varName="response.uit">
+                    <trf:expr>
+                        <expr:xqueryText>&lt;bind:WeerstationCollectieServiceAntwoord&gt;
+  {$landen}
+&lt;/bind:WeerstationCollectieServiceAntwoord&gt;</expr:xqueryText>
+                    </trf:expr>
+                </trf:assign>
+            </bpel:extensionAssignOperation>
+        </bpel:assign>
+        <bpel:reply partnerLink="WeerstationCollectieService" operation="haalOpSteden" variable="response"></bpel:reply>
+    </bpel:sequence>
+</bpel:process>
