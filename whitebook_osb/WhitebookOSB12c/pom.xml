@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>WhitebookOSB12c</groupId>
+    <groupId>nl.whitehorses.sb</groupId>
     <artifactId>WhitebookOSB12c</artifactId>
     <version>1.0-SNAPSHOT</version>
 
