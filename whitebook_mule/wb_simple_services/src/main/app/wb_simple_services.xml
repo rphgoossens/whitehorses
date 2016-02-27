@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.7.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pattern="http://www.mulesoft.org/schema/mule/pattern"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/pattern http://www.mulesoft.org/schema/mule/pattern/current/mule-pattern.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/pattern http://www.mulesoft.org/schema/mule/pattern/3.1/mule-pattern.xsd">
+
+	<pattern:simple-service name="cityServiceREST"
+		address="http://localhost:8888/rest" component-class="nl.whitehorses.mulewb.services.rest.CityServiceImpl"
+		type="jax-rs"></pattern:simple-service>
+
+	<pattern:simple-service name="cityServiceWS"
+		address="http://localhost:8888/soap/CityService" component-class="nl.whitehorses.mulewb.services.soap.CityServiceImpl"
+		type="jax-ws"></pattern:simple-service>
+
+</mule>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://services.mulewb.whitehorses.nl/CityService"
+	xmlns:tns="http://services.mulewb.whitehorses.nl/CityService" xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="CityServiceRequest">
+	</element>
+	<element name="CityServiceResponse">
+		<complexType>
+			<sequence>
+				<element name="Cities" type="tns:citiesType" maxOccurs="1"
+					minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="citiesType">
+		<sequence>
+			<element name="City" type="tns:cityType" minOccurss="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="cityType">
+		<sequence>
+			<element name="Name" type="string" />
+		</sequence>
+	</complexType>
+</schema>
