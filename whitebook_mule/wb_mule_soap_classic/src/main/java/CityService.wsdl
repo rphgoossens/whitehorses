@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CityService"
+    targetNamespace="http://services.mulewb.whitehorses.nl/CityService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12s/"
+    xmlns:tns="http://services.mulewb.whitehorses.nl/CityService">
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://services.mulewb.whitehorses.nl/CityService"
+                schemaLocation="CityService.xsd" />
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="CityServiceRequestMessage">
+        <wsdl:part name="in" element="tns:CityServiceRequest" />
+    </wsdl:message>
+    <wsdl:message name="CityServiceResponseMessage">
+        <wsdl:part name="out" element="tns:CityServiceResponse" />
+    </wsdl:message>
+    <wsdl:portType name="FindAllCities">
+        <wsdl:operation name="findAllCities">
+            <wsdl:input message="tns:CityServiceRequestMessage" />
+            <wsdl:output message="tns:CityServiceResponseMessage" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="FindAllCitiesSoap12" type="tns:FindAllCities">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"
+            style="document" />
+        <wsdl:operation name="findAllCities">
+            <soap12:operation
+                soapAction="http://services.mulewb.whitehorses.nl/CityService/findAllCities"
+                style="document" />
+            <wsdl:input>
+                <soap12:body use="literal" parts="in" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="out" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CityService">
+        <wsdl:port name="FindAllCitiesSoap12" binding="tns:FindAllCitiesSoap12" >
+            <soap12:address location="http://www.example.org/" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

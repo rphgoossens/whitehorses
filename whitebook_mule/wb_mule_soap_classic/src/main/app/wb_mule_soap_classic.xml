@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_Configuration"
+		host="localhost" port="8088" basePath="/soap/CityService" doc:name="HTTP Listener Configuration" />
+	<http:listener-config name="HTTP_Proxy_Configuration"
+		host="localhost" port="8089" doc:name="HTTP Listener Configuration" />
+	<http:request-config name="HTTP_Request_Configuration"
+		host="localhost" port="8088" doc:name="HTTP Request Configuration" />
+	<flow name="wb_mule_soap_service_classic">
+		<http:listener config-ref="HTTP_Listener_Configuration"
+			path="/" doc:name="HTTP" />
+		<cxf:jaxws-service
+			serviceClass="nl.whitehorses.mulewb.services.cityservice.FindAllCities"
+			doc:name="CXF" />
+		<component class="nl.whitehorses.mulewb.services.soap.CityServiceImpl"
+			doc:name="Java" />
+	</flow>
+	<flow name="wb_mule_soap_proxy_classic">
+		<http:listener config-ref="HTTP_Proxy_Configuration"
+			path="/soap/CityService" doc:name="HTTP" />
+		<http:request config-ref="HTTP_Request_Configuration"
+			path="#[message.inboundProperties.'http.listener.path']" method="#[message.inboundProperties.'http.method']"
+			doc:name="HTTP" />
+	</flow>
+</mule>
