@@ -5,12 +5,25 @@
 	  xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	  xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.7.0"
 	  xmlns:pattern="http://www.mulesoft.org/schema/mule/pattern"
+	  xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
-        http://www.mulesoft.org/schema/mule/pattern http://www.mulesoft.org/schema/mule/pattern/current/mule-pattern.xsd">
+        http://www.mulesoft.org/schema/mule/pattern http://www.mulesoft.org/schema/mule/pattern/current/mule-pattern.xsd
+        http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd">
 
+
+	<mulexml:xslt-transformer name="cityTransformer" xsl-file="CityName.xslt" />
+
+
+	<!-- JAX-WS service -->
 	<pattern:simple-service name="citySOAP"
 		address="http://localhost:8088/soap/CityService" component-class="nl.whitehorses.mulewb.services.soap.CityServiceImpl"
 		type="jax-ws"></pattern:simple-service>
 
+
+	<!-- WS Proxy -->
+	<pattern:web-service-proxy name="citySOAPProxy"
+		inboundAddress="http://localhost:8089/soap/CityService" outboundAddress="http://localhost:8088/soap/CityService"
+		responseTransformer-refs="cityTransformer">
+	</pattern:web-service-proxy>
 </mule>
