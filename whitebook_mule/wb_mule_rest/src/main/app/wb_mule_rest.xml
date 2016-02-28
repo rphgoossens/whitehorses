@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	  xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	  xmlns:spring="http://www.springframework.org/schema/beans"
+	  xmlns:pattern="http://www.mulesoft.org/schema/mule/pattern"
+	  xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	  xmlns:json="http://www.mulesoft.org/schema/mule/json"
+	  xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	  version="CE-3.7.0"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+        http://www.mulesoft.org/schema/mule/pattern http://www.mulesoft.org/schema/mule/pattern/current/mule-pattern.xsd
+        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+        http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+        http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd">
+
+
+	<mulexml:jaxb-context name="myJaxbContext"
+		packageNames="nl.whitehorses.mule.rest" />
+	<mulexml:jaxb-xml-to-object-transformer
+		name="xmlToObjectTransformer" jaxbContext-ref="myJaxbContext" />
+	<json:object-to-json-transformer name="objectToJsonTransformer" />
+
+	<message-properties-transformer name="responseMessageJsonTransformer">
+		<add-message-property key="Content-Type" value="application/json" />
+	</message-properties-transformer>
+
+
+	<!-- JAX-RS Json service -->
+	<pattern:simple-service name="ProductRESTJson"
+		address="http://localhost:8089/rest-json" component-class="nl.whitehorses.mule.rest.services.json.ProductServiceImpl"
+		type="jax-rs"></pattern:simple-service>
+
+	<!-- JAX-RS Xml service -->
+	<pattern:simple-service name="ProductRESTXml"
+		address="http://localhost:8089/rest-xml" component-class="nl.whitehorses.mule.rest.services.xml.ProductServiceImpl"
+		type="jax-rs"></pattern:simple-service>
+
+		
+	<!-- Proxy Json service -->
+	<pattern:http-proxy name="ProductRESTJsonProxy"
+		inboundAddress="http://localhost:8090/rest-json" outboundAddress="http://localhost:8089/rest-json"/>
+		
+	<!-- Proxy Json to Xml service -->	
+	<pattern:http-proxy name="ProductRESTXmlToJsonProxy"
+		inboundAddress="http://localhost:8091/rest-json" outboundAddress="http://localhost:8089/rest-xml"
+		responseTransformer-refs="xmlToObjectTransformer objectToJsonTransformer responseMessageJsonTransformer" />
+
+</mule>
