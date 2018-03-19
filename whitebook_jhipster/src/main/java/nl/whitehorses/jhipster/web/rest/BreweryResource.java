@@ -1,12 +1,11 @@
 package nl.whitehorses.jhipster.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import io.github.jhipster.web.util.ResponseUtil;
 import nl.whitehorses.jhipster.domain.Brewery;
-
 import nl.whitehorses.jhipster.repository.BreweryRepository;
 import nl.whitehorses.jhipster.web.rest.errors.BadRequestAlertException;
 import nl.whitehorses.jhipster.web.rest.util.HeaderUtil;
-import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -25,10 +23,8 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class BreweryResource {
 
-    private final Logger log = LoggerFactory.getLogger(BreweryResource.class);
-
     private static final String ENTITY_NAME = "brewery";
-
+    private final Logger log = LoggerFactory.getLogger(BreweryResource.class);
     private final BreweryRepository breweryRepository;
 
     public BreweryResource(BreweryRepository breweryRepository) {
@@ -87,7 +83,7 @@ public class BreweryResource {
     public List<Brewery> getAllBreweries() {
         log.debug("REST request to get all Breweries");
         return breweryRepository.findAll();
-        }
+    }
 
     /**
      * GET  /breweries/:id : get the "id" brewery.
