@@ -45,6 +45,7 @@ public class CacheConfiguration {
             cm.createCache(nl.whitehorses.jhipster.domain.Beer.class.getName(), jcacheConfiguration);
             cm.createCache(nl.whitehorses.jhipster.domain.Brewery.class.getName(), jcacheConfiguration);
             cm.createCache(nl.whitehorses.jhipster.domain.Brewery.class.getName() + ".beers", jcacheConfiguration);
+            cm.createCache(nl.whitehorses.jhipster.domain.Customer.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

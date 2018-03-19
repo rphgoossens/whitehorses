@@ -9,6 +9,7 @@
                 "main": "Entities",
                 "beer": "Beer",
                 "brewery": "Brewery",
+                "customer": "Customer",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
