@@ -1,14 +1,14 @@
 {
     "jhAppApp": {
-        "BeerType" : {
+        "BeerType": {
             "null": "",
-            "PILSNER": "PILSNER",
-            "LAGER": "LAGER",
-            "PALE_ALE": "PALE_ALE",
-            "INDIA_PALE_ALE": "INDIA_PALE_ALE",
-            "PORTER": "PORTER",
-            "STOUT": "STOUT",
-            "OTHER": "OTHER"
+            "PILSNER": "Pilsner",
+            "LAGER": "Lager",
+            "PALE_ALE": "Pale ale",
+            "INDIA_PALE_ALE": "India pale ale",
+            "PORTER": "Porter",
+            "STOUT": "Stout",
+            "OTHER": "Other"
         }
     }
 }

@@ -5,11 +5,15 @@
         "menu": {
             "home": "Startpagina",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "custom" : {
+                "main": "Custom",
+                "brewerySummary": "BrouwerijOverzicht"
+            },
             "entities": {
                 "main": "Entiteiten",
-                "beer": "Beer",
-                "brewery": "Brewery",
-                "customer": "Customer",
+                "beer": "Bier",
+                "brewery": "Brouwerij",
+                "customer": "Klant",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
